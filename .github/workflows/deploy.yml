@@ -6,9 +6,7 @@ on:
       - develop
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: write # Grants the deployment module rights to commit files
 
 jobs:
   build:
@@ -35,23 +33,8 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload build
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to GitHub Pages Branch
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: jai_web/build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          folder: jai_web/build # Directly isolates your subfolder build target
+          branch: gh-pages # Creates and updates a deployment branch automatically

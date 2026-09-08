@@ -1,0 +1,48 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 24px 0;
+  background: rgba(15, 23, 42, .82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(100, 116, 139, .32);
+}
+
+.nav-shell {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand, .main-nav button, .menu-toggle { border: 0; background: none; font: inherit; cursor: pointer; }
+.brand { display: flex; align-items: center; gap: 12px; color: #F4F4F4; padding: 0; }
+.brand-mark { font-size: 28px; line-height: 1; font-weight: 700; letter-spacing: -3px; }
+.brand-mark span { color: #22D3EE; letter-spacing: -2px; }
+.brand-label { font-size: 13px; letter-spacing: .04em; font-weight: 600; }
+.main-nav { display: flex; align-items: center; gap: 31px; }
+.main-nav button { position: relative; color: rgba(244, 244, 244, .72); font-size: 12px; transition: color .25s ease, transform .25s ease; }
+.main-nav button::after { content: ''; position: absolute; left: 0; right: 0; bottom: -9px; height: 2px; background: #22D3EE; box-shadow: 0 0 10px rgba(34, 211, 238, .8); transform: scaleX(0); transform-origin: center; transition: transform .25s ease; }
+.main-nav button:hover, .main-nav button.active { color: #fff; }
+.main-nav button:hover { transform: translateY(-2px); }
+.main-nav button.active::after { transform: scaleX(1); }
+.main-nav .nav-cta { border: 1px solid rgba(100, 116, 139, .7); color: #F4F4F4; border-radius: 30px; padding: 11px 17px; }
+.main-nav .nav-cta::after { display: none; }
+.nav-cta span { color: #22D3EE; margin-left: 6px; font-size: 15px; }
+.menu-toggle { display: none; }
+
+@media (max-width: 720px) {
+  .site-header { padding: 18px 0; }
+  .nav-shell { width: min(100% - 40px, 1180px); }
+  .menu-toggle { display: grid; gap: 4px; padding: 8px 0 8px 8px; }
+  .menu-toggle span { width: 23px; height: 1px; background: #F4F4F4; }
+  .main-nav { display: none; position: absolute; top: 70px; left: 20px; right: 20px; padding: 22px; background: #0F172A; border: 1px solid rgba(100, 116, 139, .42); flex-direction: column; align-items: stretch; gap: 18px; }
+  .main-nav.is-open { display: flex; }
+  .main-nav button { text-align: left; font-size: 15px; }
+  .main-nav button::after { left: 0; right: auto; bottom: -6px; width: 28px; transform-origin: left; }
+  .main-nav .nav-cta { text-align: center; }
+}

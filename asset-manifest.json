@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/my_portfolio/static/css/main.55811df3.css",
+    "main.js": "/my_portfolio/static/js/main.ebbe5090.js",
+    "static/js/453.a9e060b4.chunk.js": "/my_portfolio/static/js/453.a9e060b4.chunk.js",
+    "index.html": "/my_portfolio/index.html",
+    "main.55811df3.css.map": "/my_portfolio/static/css/main.55811df3.css.map",
+    "main.ebbe5090.js.map": "/my_portfolio/static/js/main.ebbe5090.js.map",
+    "453.a9e060b4.chunk.js.map": "/my_portfolio/static/js/453.a9e060b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55811df3.css",
+    "static/js/main.ebbe5090.js"
+  ]
+}
